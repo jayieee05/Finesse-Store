@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us - Jewelry Collection</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="header-container">
+        <div class="logo">
+          <a href="index.html">
+            <img src="assets/logo.png" alt="Logo" />
+          </a>
+        </div>
+        <nav>
+          <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="about.html" class="active">About Us</a></li>
+          </ul>
+        </nav>
+        <div class="header-icons">
+          <a href="cart.html" class="cart-icon active">
+            <img src="assets/cart.svg" alt="Cart" />
+            <span class="cart-count" id="cart-count"> </span>
+          </a>
+          <div
+            class="account-icon"
+            id="account-icon-container"
+            style="position: relative"
+          >
+            <a
+              href="#"
+              id="account-link"
+              style="display: flex; align-items: center"
+            >
+              <img
+                src="assets/account.svg"
+                alt="Account"
+                style="width: 24px; height: 24px; cursor: pointer"
+              />
+              <span
+                id="account-name"
+                style="
+                  margin-left: 8px;
+                  font-family: 'Montserrat', sans-serif;
+                  font-size: 14px;
+                  color: #333;
+                "
+              ></span>
+            </a>
+            <div
+              id="account-dropdown"
+              style="
+                display: none;
+                position: absolute;
+                top: 100%;
+                right: 0;
+                background: #fff;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                border-radius: 8px;
+                overflow: hidden;
+                z-index: 1000;
+                width: 200px;
+              "
+            >
+              <div
+                style="
+                  padding: 16px;
+                  font-family: 'Montserrat', sans-serif;
+                  font-size: 14px;
+                  color: #333;
+                  border-bottom: 1px solid #eee;
+                "
+              ></div>
+              <button
+                id="logout-button"
+                style="
+                  width: 100%;
+                  padding: 12px;
+                  background: #f44336;
+                  color: #fff;
+                  border: none;
+                  font-family: 'Montserrat', sans-serif;
+                  font-size: 14px;
+                  cursor: pointer;
+                  text-align: center;
+                "
+              >
+                Logout
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="mobile-menu-btn">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero about-hero">
+        <div class="hero-content">
+          <h1 style="color: #ffffff">About Us</h1>
+        </div>
+      </section>
+
+      <section class="about-section">
+        <div class="container">
+          <div class="about-grid">
+            <div class="about-content">
+              <h2>Our Story</h2>
+              <p>
+                Finesse was brought to life by three passionate minds Rachel
+                Paragas, Michelle Capitan, and Jay Marc Torrefranca with a
+                shared vision to create a jewelry brand that blends elegance,
+                simplicity, and modern style. What started as a school project
+                turned into a meaningful venture, built on creativity,
+                dedication, and teamwork.
+              </p>
+              <p>
+                Each piece in our collection is thoughtfully designed to elevate
+                everyday looks, making style more personal and accessible.
+                Finesse represents our journey from ideas and sketches to
+                polished designs and our goal to bring beauty and confidence to
+                others through our creations.
+              </p>
+            </div>
+            <div class="about-image">
+              <img src="assets/about-story.jpg" alt="Our Story" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="about-section alt-bg">
+        <div class="container">
+          <div class="about-grid reverse">
+            <div class="about-image">
+              <img src="assets/about-craft.jpg" alt="Our Craft" />
+            </div>
+            <div class="about-content">
+              <h2>Who We Are?</h2>
+              <p>
+                We are Finesse a jewelry brand founded by Rachel, Michelle, and
+                Jay Marc, three BSIT students with a passion for creativity,
+                innovation, and fashion. We focus on crafting high-quality,
+                stylish accessories that reflect elegance and individuality.
+              </p>
+              <p>
+                Our team believes in clean design, attention to detail, and
+                making every piece feel special. Finesse isn't just about
+                jewelry it's about expressing who you are, with confidence and
+                class.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-logo">
+            <img src="assets/logo.png" alt="Logo" />
+          </div>
+          <div class="footer-links">
+            <h4>Shop</h4>
+            <ul>
+              <li><a href="shop.html?category=rings">Rings</a></li>
+              <li><a href="shop.html?category=necklaces">Necklaces</a></li>
+              <li><a href="shop.html?category=earrings">Earrings</a></li>
+              <li><a href="shop.html?category=bracelets">Bracelets</a></li>
+            </ul>
+          </div>
+          <div class="footer-links">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="about.html">About Us</a></li>
+            </ul>
+          </div>
+          <div class="footer-newsletter">
+            <h4>Stay Updated</h4>
+            <p>Subscribe to our newsletter for exclusive offers and updates</p>
+            <form id="newsletter-form">
+              <input type="email" placeholder="Your email address" required />
+              <button type="submit" class="btn-primary">Subscribe</button>
+            </form>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <div class="social-icons">
+            <a href="#"><img src="assets/instagram.svg" alt="Instagram" /></a>
+            <a href="#"><img src="assets/facebook.svg" alt="Facebook" /></a>
+          </div>
+          <p class="copyright">
+            © 2025 Finesse Collection. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

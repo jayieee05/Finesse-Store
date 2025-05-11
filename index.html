@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finesse</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="assets/logo.png" alt="Logo">
+                </a>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                </ul>
+            </nav>
+            <div class="header-icons">
+                <a href="cart.html" class="cart-icon active">
+                    <img src="assets/cart.svg" alt="Cart">
+                    <span class="cart-count" id="cart-count">
+
+                    </span>
+                </a>
+                <div class="account-icon" id="account-icon-container" style="position: relative;">
+                    <a href="#" id="account-link" style="display: flex; align-items: center;">
+                        <img src="assets/account.svg" alt="Account" style="width: 24px; height: 24px; cursor: pointer;">
+                        <span id="account-name" style="margin-left: 8px; font-family: 'Montserrat', sans-serif; font-size: 14px; color: #333;"></span>
+                    </a>
+                    <div id="account-dropdown" style="display: none; position: absolute; top: 100%; right: 0; background: #fff; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); border-radius: 8px; overflow: hidden; z-index: 1000; width: 200px;">
+                        <div style="padding: 16px; font-family: 'Montserrat', sans-serif; font-size: 14px; color: #333; border-bottom: 1px solid #eee;">
+                            
+                        </div>
+                        <button id="logout-button" style="width: 100%; padding: 12px; background: #f44336; color: #fff; border: none; font-family: 'Montserrat', sans-serif; font-size: 14px; cursor: pointer; text-align: center;">Logout</button>
+                    </div>
+                </div>
+            </div>
+            <div class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>High Quality Timeless Accessories</h1>
+                <p>Discover our collection of handcrafted jewelry pieces designed to last a lifetime</p>
+                <a href="shop.html" class="btn-primary">Shop Now</a>
+            </div>
+        </section>
+
+        <section class="featured-categories">
+            <div class="container">
+                <h2 class="section-title">Our Collections</h2>
+                <div class="category-grid">
+                    <div class="category-card">
+                        <img src="assets/category-rings.png" alt="Rings Collection">
+                        <h3>Rings</h3>
+                        <a href="shop.html?category=rings" class="btn-secondary">View Collection</a>
+                    </div>
+                    <div class="category-card">
+                        <img src="assets/category-necklaces.png" alt="Necklaces Collection">
+                        <h3>Necklaces</h3>
+                        <a href="shop.html?category=necklaces" class="btn-secondary">View Collection</a>
+                    </div>
+                    <div class="category-card">
+                        <img src="assets/category-earrings.png" alt="Earrings Collection">
+                        <h3>Earrings</h3>
+                        <a href="shop.html?category=earrings" class="btn-secondary">View Collection</a>
+                    </div>
+                    <div class="category-card">
+                        <img src="assets/category-bracelets.png" alt="Bracelets Collection">
+                        <h3>Bracelets</h3>
+                        <a href="shop.html?category=bracelets" class="btn-secondary">View Collection</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bestsellers">
+            <div class="container">
+                <h2 class="section-title">Bestsellers</h2>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <img src="products/product-1-large.jpg" alt="Ring Of Leaves">
+                        <h3>Ring Of Leaves</h3>
+                        <p class="price">₱11,333</p>
+                        <a href="product1.html" class="btn-secondary">View Details</a>
+                    </div>
+                    <div class="product-card">
+                        <img src="products/productN1.jpg" alt="Ruby Pendant">
+                        <h3>Ruby Pendant</h3>
+                        <p class="price">₱14,166</p>
+                        <a href="product16.html" class="btn-secondary">View Details</a>
+                    </div>
+                    <div class="product-card">
+                        <img src="products/productB1.jpg" alt="Chained Cuff">
+                        <h3>Chained Cuff</h3>
+                        <p class="price">₱11,333</p>
+                        <a href="product6.html" class="btn-secondary">View Details</a>
+                    </div>
+                    <div class="product-card">
+                        <img src="products/productE1.jpg" alt="Diamond Studs">
+                        <h3>Diamond Studs</h3>
+                        <p class="price">₱11,333</p>
+                        <a href="product11.html" class="btn-secondary">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-preview">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-image">
+                        <img src="assets/about-preview.png" alt="Our Craftsmanship">
+                    </div>
+                    <div class="about-content">
+                        <h2>Our Craftsmanship</h2>
+                        <p>Each piece is meticulously handcrafted by our skilled artisans using only the finest materials. We believe in creating timeless accessories that can be cherished for generations.</p>
+                        <a href="about.html" class="btn-primary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-logo">
+                    <img src="assets/logo.png" alt="Logo">
+                </div>
+                <div class="footer-links">
+                    <h4>Shop</h4>
+                    <ul>
+                        <li><a href="shop.html?category=rings">Rings</a></li>
+                        <li><a href="shop.html?category=necklaces">Necklaces</a></li>
+                        <li><a href="shop.html?category=earrings">Earrings</a></li>
+                        <li><a href="shop.html?category=bracelets">Bracelets</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h4>Stay Updated</h4>
+                    <p>Subscribe to our newsletter for exclusive offers and updates</p>
+                    <form id="newsletter-form">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit" class="btn-primary">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="social-icons">
+                    <a href=""><img src="assets/instagram.svg" alt="Instagram"></a>
+                    <a href="#"><img src="assets/facebook.svg" alt="Facebook"></a>
+                </div>
+                <p class="copyright">© 2025 Finesse Collection. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

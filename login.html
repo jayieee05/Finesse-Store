@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login | Finesse</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="header-container">
+        <div class="logo">
+          <a href="index.html">
+            <img src="assets/logo.png" alt="Logo" />
+          </a>
+        </div>
+        <nav>
+          <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="about.html">About Us</a></li>
+          </ul>
+        </nav>
+        <div class="header-icons">
+          <a href="cart.html" class="cart-icon active">
+            <img src="assets/cart.svg" alt="Cart" />
+            <span class="cart-count" id="cart-count"> </span>
+          </a>
+          <div
+            class="account-icon"
+            id="account-icon-container"
+            style="position: relative"
+          >
+            <a
+              href="#"
+              id="account-link"
+              style="display: flex; align-items: center"
+            >
+              <img
+                src="assets/account.svg"
+                alt="Account"
+                style="width: 24px; height: 24px; cursor: pointer"
+              />
+              <span
+                id="account-name"
+                style="
+                  margin-left: 8px;
+                  font-family: 'Montserrat', sans-serif;
+                  font-size: 14px;
+                  color: #333;
+                "
+              ></span>
+            </a>
+            <div
+              id="account-dropdown"
+              style="
+                display: none;
+                position: absolute;
+                top: 100%;
+                right: 0;
+                background: #fff;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                border-radius: 8px;
+                overflow: hidden;
+                z-index: 1000;
+                width: 200px;
+              "
+            >
+              <div
+                style="
+                  padding: 16px;
+                  font-family: 'Montserrat', sans-serif;
+                  font-size: 14px;
+                  color: #333;
+                  border-bottom: 1px solid #eee;
+                "
+              ></div>
+              <button
+                id="logout-button"
+                style="
+                  width: 100%;
+                  padding: 12px;
+                  background: #f44336;
+                  color: #fff;
+                  border: none;
+                  font-family: 'Montserrat', sans-serif;
+                  font-size: 14px;
+                  cursor: pointer;
+                  text-align: center;
+                "
+              >
+                Logout
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="mobile-menu-btn">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="auth-section">
+        <div class="auth-container">
+          <h2>Login to Finesse</h2>
+          <form id="login-form">
+            <input
+              type="email"
+              name="email"
+              placeholder="Email Address"
+              required
+            />
+            <input
+              type="password"
+              name="password"
+              placeholder="Password"
+              required
+            />
+            <button type="submit" class="btn-primary">Login</button>
+          </form>
+          <p>Don't have an account? <a href="signup.html">Sign up here</a>.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-logo">
+            <img src="assets/logo.png" alt="Logo" />
+          </div>
+          <div class="footer-links">
+            <h4>Shop</h4>
+            <ul>
+              <li><a href="shop.html?category=rings">Rings</a></li>
+              <li><a href="shop.html?category=necklaces">Necklaces</a></li>
+              <li><a href="shop.html?category=earrings">Earrings</a></li>
+              <li><a href="shop.html?category=bracelets">Bracelets</a></li>
+            </ul>
+          </div>
+          <div class="footer-links">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="about.html">About Us</a></li>
+            </ul>
+          </div>
+          <div class="footer-newsletter">
+            <h4>Stay Updated</h4>
+            <p>Subscribe to our newsletter for exclusive offers and updates</p>
+            <form id="newsletter-form">
+              <input type="email" placeholder="Your email address" required />
+              <button type="submit" class="btn-primary">Subscribe</button>
+            </form>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <div class="social-icons">
+            <a href="#"><img src="assets/instagram.svg" alt="Instagram" /></a>
+            <a href="#"><img src="assets/facebook.svg" alt="Facebook" /></a>
+          </div>
+          <p class="copyright">
+            © 2025 Finesse Collection. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document
+        .getElementById("login-form")
+        .addEventListener("submit", function (event) {
+          event.preventDefault(); // Prevent form submission
+
+          const enteredEmail = event.target.email.value;
+          const enteredPassword = event.target.password.value;
+
+          // Retrieve stored user data from LocalStorage
+          const storedUser = JSON.parse(localStorage.getItem("user"));
+
+          if (
+            storedUser &&
+            storedUser.email === enteredEmail &&
+            storedUser.password === enteredPassword
+          ) {
+            // Set logged-in status in LocalStorage
+            localStorage.setItem("loggedin", "true");
+            localStorage.setItem("loggedin_user", JSON.stringify(storedUser));
+
+            // Redirect to home page if login is successful
+            window.location.href = "index.html";
+          } else {
+            alert("Incorrect email or password.");
+          }
+        });
+    </script>
+    <script src="script.js"></script>
+  </body>
+</html>

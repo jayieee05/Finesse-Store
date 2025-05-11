@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shop - Jewelry Collection</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="header-container">
+        <div class="logo">
+          <a href="index.html">
+            <img src="assets/logo.png" alt="Logo" />
+          </a>
+        </div>
+        <nav>
+          <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="shop.html" class="active">Shop</a></li>
+            <li><a href="about.html">About Us</a></li>
+          </ul>
+        </nav>
+        <div class="header-icons">
+          <a href="cart.html" class="cart-icon active">
+            <img src="assets/cart.svg" alt="Cart" />
+            <span class="cart-count" id="cart-count"> </span>
+          </a>
+          <div
+            class="account-icon"
+            id="account-icon-container"
+            style="position: relative"
+          >
+            <a
+              href="#"
+              id="account-link"
+              style="display: flex; align-items: center"
+            >
+              <img
+                src="assets/account.svg"
+                alt="Account"
+                style="width: 24px; height: 24px; cursor: pointer"
+              />
+              <span
+                id="account-name"
+                style="
+                  margin-left: 8px;
+                  font-family: 'Montserrat', sans-serif;
+                  font-size: 14px;
+                  color: #333;
+                "
+              ></span>
+            </a>
+            <div
+              id="account-dropdown"
+              style="
+                display: none;
+                position: absolute;
+                top: 100%;
+                right: 0;
+                background: #fff;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                border-radius: 8px;
+                overflow: hidden;
+                z-index: 1000;
+                width: 200px;
+              "
+            >
+              <div
+                style="
+                  padding: 16px;
+                  font-family: 'Montserrat', sans-serif;
+                  font-size: 14px;
+                  color: #333;
+                  border-bottom: 1px solid #eee;
+                "
+              ></div>
+              <button
+                id="logout-button"
+                style="
+                  width: 100%;
+                  padding: 12px;
+                  background: #f44336;
+                  color: #fff;
+                  border: none;
+                  font-family: 'Montserrat', sans-serif;
+                  font-size: 14px;
+                  cursor: pointer;
+                  text-align: center;
+                "
+              >
+                Logout
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="mobile-menu-btn" id="mobile-menu-btn">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero shop-hero">
+        <div class="hero-content">
+          <h1 style="color: #ffffff">Our Collection</h1>
+          <p>Discover timeless pieces crafted with care</p>
+        </div>
+      </section>
+
+      <section class="shop-section">
+        <div class="container">
+          <div class="shop-grid">
+            <aside class="shop-sidebar">
+              <div class="filter-section">
+                <h3>Categories</h3>
+                <ul class="filter-list" id="category-filters">
+                  <li>
+                    <a href="#" data-category="all" class="active"
+                      >All Products</a
+                    >
+                  </li>
+                  <li><a href="#" data-category="rings">Rings</a></li>
+                  <li><a href="#" data-category="necklaces">Necklaces</a></li>
+                  <li><a href="#" data-category="earrings">Earrings</a></li>
+                  <li><a href="#" data-category="bracelets">Bracelets</a></li>
+                </ul>
+              </div>
+            </aside>
+            <div class="shop-products">
+              <div
+                class="search-bar"
+                style="display: flex; align-items: center; margin-bottom: 20px"
+              >
+                <input
+                  type="text"
+                  id="search-input"
+                  placeholder="Search products..."
+                  style="
+                    flex: 1;
+                    padding: 10px;
+                    border: 1px solid #ccc;
+                    border-radius: 5px;
+                    font-family: 'Montserrat', sans-serif;
+                  "
+                />
+                <button
+                  id="search-button"
+                  class="btn-primary"
+                  style="
+                    margin-left: 10px;
+                    padding: 10px 20px;
+                    color: #fff;
+                    border: none;
+                    border-radius: 5px;
+                    font-family: 'Montserrat', sans-serif;
+                    cursor: pointer;
+                  "
+                >
+                  Search
+                </button>
+              </div>
+              <script>
+                document
+                  .getElementById("search-button")
+                  .addEventListener("click", function () {
+                    const query = document
+                      .getElementById("search-input")
+                      .value.toLowerCase();
+                    const products = document.querySelectorAll(".product-card");
+                    let visibleCount = 0;
+
+                    products.forEach((product) => {
+                      const productName = product
+                        .querySelector("h3")
+                        .textContent.toLowerCase();
+                      if (productName.includes(query)) {
+                        product.style.display = "block";
+                        visibleCount++;
+                      } else {
+                        product.style.display = "none";
+                      }
+                    });
+
+                    // Update the product count
+                    document.getElementById("product-count").textContent =
+                      visibleCount;
+                  });
+              </script>
+
+              <div class="shop-header">
+                <div class="product-count">
+                  <span id="product-count">24</span> products
+                </div>
+              </div>
+              <div class="product-grid" id="product-grid">
+                <div class="product-card">
+                  <img
+                    src="products/product-1-large.jpg"
+                    alt="Ring Of Leaves"
+                  />
+                  <h3>Ring Of Leaves</h3>
+                  <p class="price">₱11,333</p>
+                  <a href="products/product-1-large.jpg" class="btn-secondary"
+                    >View Details</a
+                  >
+                </div>
+
+                <div class="product-card">
+                  <img
+                    src="products/product-2-large.jpg"
+                    alt="Simple Chain Ring"
+                  />
+                  <h3>Simple Chain Ring</h3>
+                  <p class="price">₱5,666</p>
+                  <a href="product2.html2" class="btn-secondary"
+                    >View Details</a
+                  >
+                </div>
+
+                <div class="product-card">
+                  <img src="products/product-3-large.jpg" alt="Tiara Ring" />
+                  <h3>Tiara Ring</h3>
+                  <p class="price">₱8,500</p>
+                  <a href="product3.html" class="btn-secondary">View Details</a>
+                </div>
+
+                <div class="product-card">
+                  <img src="products/product-4-large.jpg" alt="Rose Ring" />
+                  <h3>Rose Ring</h3>
+                  <p class="price">₱5,666</p>
+                  <a href="product4.html" class="btn-secondary">View Details</a>
+                </div>
+
+                <div class="product-card">
+                  <img src="products/product-5-large.jpg" alt="Signet Ring" />
+                  <h3>Signet Ring</h3>
+                  <p class="price">₱5,666</p>
+                  <a href="product5.html" class="btn-secondary">View Details</a>
+                </div>
+
+                <div class="product-card">
+                  <img src="products/productB1.jpg" alt="Chained Cuff" />
+                  <h3>Chained Cuff</h3>
+                  <p class="price">₱11,333</p>
+                  <a href="product6.html" class="btn-secondary">View Details</a>
+                </div>
+
+                <div class="product-card">
+                  <img src="products/productB2.jpg" alt="Thin Chain" />
+                  <h3>Thin Chain</h3>
+                  <p class="price">₱5,100</p>
+                  <a href="product7.html" class="btn-secondary">View Details</a>
+                </div>
+
+                <div class="product-card">
+                  <img src="products/productB3.jpg" alt="Leafy Chain" />
+                  <h3>Leafy Chain</h3>
+                  <p class="price">₱5,100</p>
+                  <a href="product8.html" class="btn-secondary">View Details</a>
+                </div>
+
+                <div class="product-card">
+                  <img src="products/productB4.jpg" alt="Flora Chain" />
+                  <h3>Flora Chain</h3>
+                  <p class="price">₱2,266</p>
+                  <a href="product9.html" class="btn-secondary">View Details</a>
+                </div>
+
+                <div class="product-card">
+                  <img src="products/productB5.jpg" alt="Arrow Cuff" />
+                  <h3>Arrow Cuff</h3>
+                  <p class="price">₱2,833</p>
+                  <a href="product10.html" class="btn-secondary"
+                    >View Details</a
+                  >
+                </div>
+
+                <div class="product-card">
+                  <img src="products/productE1.jpg" alt="Diamond Studs" />
+                  <h3>Diamond Studs</h3>
+                  <p class="price">₱11,333</p>
+                  <a href="product11.html" class="btn-secondary"
+                    >View Details</a
+                  >
+                </div>
+
+                <div class="product-card">
+                  <img src="products/productE2.jpg" alt="Mini Hoops" />
+                  <h3>Mini Hoops</h3>
+                  <p class="price">₱5,100</p>
+                  <a href="product12.html" class="btn-secondary"
+                    >View Details</a
+                  >
+                </div>
+
+                <div class="product-card">
+                  <img src="products/productE3.jpg" alt="Dangling Leaves" />
+                  <h3>Dangling Leaves</h3>
+                  <p class="price">₱3,400</p>
+                  <a href="product13.html" class="btn-secondary"
+                    >View Details</a
+                  >
+                </div>
+
+                <div class="product-card">
+                  <img src="products/productE4.jpg" alt="Leaf Studs" />
+                  <h3>Leaf Studs</h3>
+                  <p class="price">₱2,266</p>
+                  <a href="product14.html" class="btn-secondary"
+                    >View Details</a
+                  >
+                </div>
+
+                <div class="product-card">
+                  <img src="products/productE5.jpg" alt="Chain Drops" />
+                  <h3>Chain Drops</h3>
+                  <p class="price">₱2,266</p>
+                  <a href="product15.html" class="btn-secondary"
+                    >View Details</a
+                  >
+                </div>
+
+                <div class="product-card">
+                  <img src="products/productN1.jpg" alt="Ruby Pendant" />
+                  <h3>Ruby Pendant</h3>
+                  <p class="price">₱14,166</p>
+                  <a href="product16.html" class="btn-secondary"
+                    >View Details</a
+                  >
+                </div>
+
+                <div class="product-card">
+                  <img src="products/productN2.jpg" alt="Diamond Choker" />
+                  <h3>Diamond Choker</h3>
+                  <p class="price">₱17,000</p>
+                  <a href="product17.html" class="btn-secondary"
+                    >View Details</a
+                  >
+                </div>
+
+                <div class="product-card">
+                  <img src="products/productN3.jpg" alt="Heart Drop" />
+                  <h3>Heart Drop</h3>
+                  <p class="price">₱11,333</p>
+                  <a href="product18.html" class="btn-secondary"
+                    >View Details</a
+                  >
+                </div>
+
+                <div class="product-card">
+                  <img src="products/productN4.jpg" alt="Leaf Pendant" />
+                  <h3>Leaf Pendant</h3>
+                  <p class="price">₱5,100</p>
+                  <a href="product19.html" class="btn-secondary"
+                    >View Details</a
+                  >
+                </div>
+
+                <div class="product-card">
+                  <img src="products/productN5.jpg" alt="Initial Pendant" />
+                  <h3>Initial Pendant</h3>
+                  <p class="price">₱5,666</p>
+                  <a href="product20.html" class="btn-secondary"
+                    >View Details</a
+                  >
+                </div>
+              </div>
+              <div class="pagination">
+                <button class="pagination-btn" id="prev-page" disabled>
+                  Previous
+                </button>
+                <div class="page-numbers" id="page-numbers">
+                  <span class="page-number active">1</span>
+                  <span class="page-number">2</span>
+                  <span class="page-number">3</span>
+                </div>
+                <button class="pagination-btn" id="next-page">Next</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-logo">
+            <img src="assets/logo.png" alt="Logo" />
+          </div>
+          <div class="footer-links">
+            <h4>Shop</h4>
+            <ul>
+              <li><a href="shop.html?category=rings">Rings</a></li>
+              <li><a href="shop.html?category=necklaces">Necklaces</a></li>
+              <li><a href="shop.html?category=earrings">Earrings</a></li>
+              <li><a href="shop.html?category=bracelets">Bracelets</a></li>
+            </ul>
+          </div>
+          <div class="footer-links">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="about.html">About Us</a></li>
+            </ul>
+          </div>
+          <div class="footer-newsletter">
+            <h4>Stay Updated</h4>
+            <p>Subscribe to our newsletter for exclusive offers and updates</p>
+            <form id="newsletter-form">
+              <input type="email" placeholder="Your email address" required />
+              <button type="submit" class="btn-primary">Subscribe</button>
+            </form>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <div class="social-icons">
+            <a href="#"><img src="assets/instagram.svg" alt="Instagram" /></a>
+            <a href="#"><img src="assets/facebook.svg" alt="Facebook" /></a>
+          </div>
+          <p class="copyright">
+            © 2025 Finesse Collection. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

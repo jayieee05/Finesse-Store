@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - Jewelry Collection</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="assets/logo.png" alt="Jewelry Collection Logo">
+                </a>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="shop.html">SHOP</a></li>
+                    <li><a href="about.html">ABOUT US</a></li>
+                </ul>
+            </nav>
+            <div class="header-icons">
+                <a href="cart.html" class="cart-icon active">
+                    <img src="assets/cart.svg" alt="Cart">
+                    <span class="cart-count" id="cart-count">
+
+                    </span>
+                </a>
+                <div class="account-icon" id="account-icon-container" style="position: relative;">
+                    <a href="#" id="account-link" style="display: flex; align-items: center;">
+                        <img src="assets/account.svg" alt="Account" style="width: 24px; height: 24px; cursor: pointer;">
+                        <span id="account-name" style="margin-left: 8px; font-family: 'Montserrat', sans-serif; font-size: 14px; color: #333;"></span>
+                    </a>
+                    <div id="account-dropdown" style="display: none; position: absolute; top: 100%; right: 0; background: #fff; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); border-radius: 8px; overflow: hidden; z-index: 1000; width: 200px;">
+                        <div style="padding: 16px; font-family: 'Montserrat', sans-serif; font-size: 14px; color: #333; border-bottom: 1px solid #eee;">
+                            
+                        </div>
+                        <button id="logout-button" style="width: 100%; padding: 12px; background: #f44336; color: #fff; border: none; font-family: 'Montserrat', sans-serif; font-size: 14px; cursor: pointer; text-align: center;">Logout</button>
+                    </div>
+                </div>
+            </div>
+            <div class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="cart-section">
+            <div class="container">
+                <h1 class="cart-title">Shopping Cart</h1>
+                <div id="empty-cart-message" style="display: none;">Your cart is empty.</div>
+                    <div class="cart-buttons">
+                        <a href="shop.html" class="btn-primary continue-shopping">CONTINUE SHOPPING</a>
+                        <button id="clear-cart-button" class="btn-secondary clear-cart">CLEAR SHOPPING CART</button>
+                    </div>
+                </div>
+                
+                <div class="payment-details">
+                    <h2>Payment Details</h2>
+                    <div class="payment-ordered">
+                        <h3>Ordered Items</h3>
+                        <table id="ordered-items-table" class="styled-table compact-table">
+                            <thead>
+                                <tr>
+                                    <th style="padding: 10px 20px; text-align: left;">Item Name</th>
+                                    <th style="padding: 10px 20px; text-align: center;">Price</th>
+                                    <th style="padding: 10px 20px; text-align: center;">Quantity</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                        <br>
+                    </div>
+                    <div class="payment-summary">
+                        <div class="summary-row">
+                            <span>Items</span>
+                            <span id="summary-items"></span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Subtotal</span>
+                            <span id="summary-subtotal"></span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Shipping Fee</span>
+                            <span id="summary-shipping"></span>
+                        </div>
+                        <div class="summary-row total">
+                            <span>Total</span>
+                            <span id="summary-total"></span>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    <button id="checkout-btn" class="btn-checkout">CHECKOUT</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-logo">
+                    <img src="assets/logo.png" alt="Finesse Collection Logo">
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Shop</h4>
+                    <ul>
+                        <li><a href="shop.html?category=rings">Rings</a></li>
+                        <li><a href="shop.html?category=necklaces">Necklaces</a></li>
+                        <li><a href="shop.html?category=earrings">Earrings</a></li>
+                        <li><a href="shop.html?category=bracelets">Bracelets</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-newsletter">
+                    <h4>Stay Updated</h4>
+                    <p>Subscribe to our newsletter for exclusive offers and updates</p>
+                    <form>
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit" class="btn-primary">SUBSCRIBE</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="social-icons">
+                    <a href="#"><img src="assets/instagram.svg" alt="Instagram"></a>
+                    <a href="#"><img src="assets/facebook.svg" alt="Facebook"></a>
+                </div>
+                <p class="copyright">© 2025 Finesse Collection. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="cart.js"></script>
+</body>
+</html>

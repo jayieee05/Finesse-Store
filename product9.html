@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Details - Jewelry Collection</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="header-container">
+        <div class="logo">
+          <a href="index.html">
+            <img src="assets/logo.png" alt="Logo" />
+          </a>
+        </div>
+        <nav>
+          <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="shop.html" class="active">Shop</a></li>
+            <li><a href="about.html">About Us</a></li>
+          </ul>
+        </nav>
+        <div class="header-icons">
+          <a href="cart.html" class="cart-icon active">
+            <img src="assets/cart.svg" alt="Cart" />
+            <span class="cart-count" id="cart-count"> </span>
+          </a>
+          <div
+            class="account-icon"
+            id="account-icon-container"
+            style="position: relative"
+          >
+            <a
+              href="#"
+              id="account-link"
+              style="display: flex; align-items: center"
+            >
+              <img
+                src="assets/account.svg"
+                alt="Account"
+                style="width: 24px; height: 24px; cursor: pointer"
+              />
+              <span
+                id="account-name"
+                style="
+                  margin-left: 8px;
+                  font-family: 'Montserrat', sans-serif;
+                  font-size: 14px;
+                  color: #333;
+                "
+              ></span>
+            </a>
+            <div
+              id="account-dropdown"
+              style="
+                display: none;
+                position: absolute;
+                top: 100%;
+                right: 0;
+                background: #fff;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                border-radius: 8px;
+                overflow: hidden;
+                z-index: 1000;
+                width: 200px;
+              "
+            >
+              <div
+                style="
+                  padding: 16px;
+                  font-family: 'Montserrat', sans-serif;
+                  font-size: 14px;
+                  color: #333;
+                  border-bottom: 1px solid #eee;
+                "
+              ></div>
+              <button
+                id="logout-button"
+                style="
+                  width: 100%;
+                  padding: 12px;
+                  background: #f44336;
+                  color: #fff;
+                  border: none;
+                  font-family: 'Montserrat', sans-serif;
+                  font-size: 14px;
+                  cursor: pointer;
+                  text-align: center;
+                "
+              >
+                Logout
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="mobile-menu-btn">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="breadcrumbs">
+        <div class="container">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="shop.html?category=rings">Rings</a></li>
+            <li>Flora Chain</li>
+          </ul>
+        </div>
+      </div>
+
+      <section class="product-detail">
+        <div class="container">
+          <div class="product-detail-grid">
+            <div class="product-gallery">
+              <div class="main-image">
+                <img
+                  src="products/productB4.jpg"
+                  alt="Ring Of Leaves"
+                  id="main-product-image"
+                />
+              </div>
+            </div>
+            <div class="product-info">
+              <h1>Flora Chain</h1>
+              <p class="product-price">₱2,266</p>
+              <div class="product-rating">
+                <div class="stars">
+                  <span class="star filled">★</span>
+                  <span class="star filled">★</span>
+                  <span class="star filled">★</span>
+                  <span class="star filled">★</span>
+                  <span class="star filled">★</span>
+                </div>
+                <span class="rating-count">45 reviews</span>
+              </div>
+              <div class="product-description">
+                <p>
+                  With tiny floral details woven into its links, the Flora Chain
+                  adds a soft, fresh vibe to your jewelry lineup — perfect for
+                  nature lovers.
+                </p>
+              </div>
+              <div class="product-options">
+                <div class="option-group">
+                  <label>Size</label>
+                  <div class="option-buttons" id="size-options">
+                    <button class="option-btn">5</button>
+                    <button class="option-btn">6</button>
+                    <button class="option-btn active">7</button>
+                    <button class="option-btn">8</button>
+                    <button class="option-btn">9</button>
+                  </div>
+                </div>
+                <div class="option-group">
+                  <label>Material</label>
+                  <div class="option-buttons" id="material-options">
+                    <button class="option-btn active">14k Gold</button>
+                    <button class="option-btn">18k Gold</button>
+                  </div>
+                </div>
+              </div>
+              <div class="product-actions">
+                <div class="quantity-selector">
+                  <button id="decrease-quantity">-</button>
+                  <input
+                    type="number"
+                    id="quantity"
+                    value="1"
+                    min="1"
+                    max="10"
+                  />
+                  <button id="increase-quantity">+</button>
+                </div>
+                <button class="btn-primary add-to-cart-btn" id="add-to-cart">
+                  Add to Cart
+                </button>
+              </div>
+              <div class="product-meta">
+                <div class="meta-item">
+                  <span class="meta-label">Categories:</span>
+                  <span class="meta-value">Rings, Gold Jewelry</span>
+                </div>
+                <div class="meta-item">
+                  <span class="meta-label">Tags:</span>
+                  <span class="meta-value"
+                    >Minimalist, Stackable, Everyday</span
+                  >
+                </div>
+              </div>
+              <div class="product-shipping">
+                <p>
+                  <img src="assets/shipping-icon.svg" alt="Shipping" /> Free
+                  shipping on orders over ₱100
+                </p>
+                <p>
+                  <img src="assets/returns-icon.svg" alt="Returns" /> 30-day
+                  returns policy
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="product-tabs">
+        <div class="container">
+          <div class="tabs">
+            <button class="tab-btn active" data-tab="description">
+              Description
+            </button>
+            <button class="tab-btn" data-tab="details">Details & Care</button>
+            <button class="tab-btn" data-tab="reviews">Reviews (44)</button>
+          </div>
+          <div class="tab-content">
+            <div class="tab-pane active" id="description">
+              <p>
+                A graceful ring with tiny, detailed leaves wrapping softly
+                around the band.
+              </p>
+              <p>
+                It's a beautiful piece that brings a touch of nature-inspired
+                charm to your everyday style.
+              </p>
+            </div>
+            <div class="tab-pane" id="details">
+              <h3>Materials</h3>
+              <p>14k solid gold (also available in 18k gold)</p>
+
+              <h3>Care Instructions</h3>
+              <ul>
+                <li>Store in the provided jewelry box when not in use</li>
+                <li>Remove before swimming, showering, or exercising</li>
+                <li>Clean with a soft polishing cloth</li>
+                <li>Avoid contact with harsh chemicals</li>
+              </ul>
+            </div>
+            <div class="tab-pane" id="reviews">
+              <div class="review-summary">
+                <div class="average-rating">
+                  <span class="rating-number">4.5</span>
+                  <div class="stars">
+                    <span class="star filled">★</span>
+                    <span class="star filled">★</span>
+                    <span class="star filled">★</span>
+                    <span class="star filled">★</span>
+                    <span class="star filled">★</span>
+                  </div>
+                  <span class="rating-count">Based on 45 reviews</span>
+                </div>
+                <div class="rating-breakdown">
+                  <div class="rating-bar">
+                    <span class="rating-level">5 stars</span>
+                    <div class="progress-bar">
+                      <div class="progress" style="width: 75%"></div>
+                    </div>
+                    <span class="rating-percent">75%</span>
+                  </div>
+                  <div class="rating-bar">
+                    <span class="rating-level">4 stars</span>
+                    <div class="progress-bar">
+                      <div class="progress" style="width: 15%"></div>
+                    </div>
+                    <span class="rating-percent">15%</span>
+                  </div>
+                  <div class="rating-bar">
+                    <span class="rating-level">3 stars</span>
+                    <div class="progress-bar">
+                      <div class="progress" style="width: 7%"></div>
+                    </div>
+                    <span class="rating-percent">7%</span>
+                  </div>
+                  <div class="rating-bar">
+                    <span class="rating-level">2 stars</span>
+                    <div class="progress-bar">
+                      <div class="progress" style="width: 2%"></div>
+                    </div>
+                    <span class="rating-percent">2%</span>
+                  </div>
+                  <div class="rating-bar">
+                    <span class="rating-level">1 star</span>
+                    <div class="progress-bar">
+                      <div class="progress" style="width: 1%"></div>
+                    </div>
+                    <span class="rating-percent">1%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="review-list">
+                <!-- Reviews will be dynamically loaded here -->
+              </div>
+              <button class="btn-secondary" id="load-more-reviews">
+                Load More Reviews
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="related-products">
+        <div class="container">
+          <h2 class="section-title">You May Also Like</h2>
+          <div class="product-grid">
+            <div class="product-card">
+              <img src="products/productB1.jpg" alt="Chained Cuff" />
+              <h3>Chained Cuff</h3>
+              <p class="price">₱11,333</p>
+              <a href="product6.html" class="btn-secondary">View Details</a>
+            </div>
+            <div class="product-card">
+              <img src="products/productB2.jpg" alt="Thin Chain" />
+              <h3>Thin Chain</h3>
+              <p class="price">₱5,100</p>
+              <a href="product7.html" class="btn-secondary">View Details</a>
+            </div>
+            <div class="product-card">
+              <img src="products/productB3.jpg" alt="Leafy Chain" />
+              <h3>Leafy Chain</h3>
+              <p class="price">₱3,400</p>
+              <a href="product8.html" class="btn-secondary">View Details</a>
+            </div>
+            <div class="product-card">
+              <img src="products/productB5.jpg" alt="Arrow Cuff" />
+              <h3>Arrow Cuff</h3>
+              <p class="price">₱2,833</p>
+              <a href="product10.html" class="btn-secondary">View Details</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-logo">
+            <img src="assets/logo.png" alt="Logo" />
+          </div>
+          <div class="footer-links">
+            <h4>Shop</h4>
+            <ul>
+              <li><a href="shop.html?category=rings">Rings</a></li>
+              <li><a href="shop.html?category=necklaces">Necklaces</a></li>
+              <li><a href="shop.html?category=earrings">Earrings</a></li>
+              <li><a href="shop.html?category=bracelets">Bracelets</a></li>
+            </ul>
+          </div>
+          <div class="footer-links">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="about.html">About Us</a></li>
+            </ul>
+          </div>
+          <div class="footer-newsletter">
+            <h4>Stay Updated</h4>
+            <p>Subscribe to our newsletter for exclusive offers and updates</p>
+            <form id="newsletter-form">
+              <input type="email" placeholder="Your email address" required />
+              <button type="submit" class="btn-primary">Subscribe</button>
+            </form>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <div class="social-icons">
+            <a href="https://www.instagram.com/the.finesse_mc/"
+              ><img src="assets/instagram.svg" alt="Instagram"
+            /></a>
+            <a href="https://www.facebook.com/profile.php?id=100093146019011"
+              ><img src="assets/facebook.svg" alt="Facebook"
+            /></a>
+          </div>
+          <p class="copyright">
+            © 2025 Finesse Collection. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
