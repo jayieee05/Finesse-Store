@@ -169,32 +169,28 @@
                 </button>
               </div>
               <script>
-                document
-                  .getElementById("search-button")
-                  .addEventListener("click", function () {
-                    const query = document
-                      .getElementById("search-input")
-                      .value.toLowerCase();
-                    const products = document.querySelectorAll(".product-card");
-                    let visibleCount = 0;
+              document.addEventListener("DOMContentLoaded", function () {
+                document.getElementById("search-button").addEventListener("click", function () {
+                  const query = document.getElementById("search-input").value.toLowerCase();
+                  const products = document.querySelectorAll(".product-card");
+                  let visibleCount = 0;
 
-                    products.forEach((product) => {
-                      const productName = product
-                        .querySelector("h3")
-                        .textContent.toLowerCase();
-                      if (productName.includes(query)) {
-                        product.style.display = "block";
-                        visibleCount++;
-                      } else {
-                        product.style.display = "none";
-                      }
-                    });
-
-                    // Update the product count
-                    document.getElementById("product-count").textContent =
-                      visibleCount;
+                  products.forEach((product) => {
+                    const productName = product.querySelector("h3").textContent.toLowerCase();
+                    if (productName.includes(query)) {
+                      product.style.display = "block";
+                      visibleCount++;
+                    } else {
+                      product.style.display = "none";
+                    }
                   });
-              </script>
+
+                  // Update the product count
+                  document.getElementById("product-count").textContent = visibleCount;
+                });
+              });
+            </script>
+
 
               <div class="shop-header">
                 <div class="product-count">
@@ -221,7 +217,7 @@
                   />
                   <h3>Simple Chain Ring</h3>
                   <p class="price">₱5,666</p>
-                  <a href="product2.html2" class="btn-secondary"
+                  <a href="product2.html" class="btn-secondary"
                     >View Details</a
                   >
                 </div>
@@ -280,8 +276,7 @@
                   <h3>Arrow Cuff</h3>
                   <p class="price">₱2,833</p>
                   <a href="product10.html" class="btn-secondary"
-                    >View Details</a
-                  >
+                    >View Details</a>
                 </div>
 
                 <div class="product-card">
